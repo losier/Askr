@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Text 0</title>
+        <title>Chat-0n</title>
         <meta
           name="description"
           content="A simple webapp to generate random chat related text"
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Text<a>{`'O'`}</a>
+          Chat<a>{`'On'`}</a>
         </h1>
 
         <p className={styles.main_content}>
