@@ -13,8 +13,7 @@ import neverHaveIEver_text from "../json_text_files/never_have_i_ever.json";
 import wouldYouRather_text from "../json_text_files/would_you_rather.json";
 
 const Home: NextPage = () => {
-  const [data, setData] = useState(["Click the button to load data"]);
-  const [displayNHIE, setDisplayNHIE] = useState(false);
+  const [data, setData] = useState("Click the button to load data");
 
   const randomTruth = truth_text[Math.floor(Math.random() * truth_text.length)];
   const randomDare = dare_text[Math.floor(Math.random() * dare_text.length)];
@@ -44,20 +43,12 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.main_content}>
-          <span
-            style={{
-              display: displayNHIE ? "block" : "none",
-            }}
-          >
-            Never Have I Ever{" "}
-          </span>
           <code className={styles.code}>{data}</code>
         </p>
         <div className={styles.grid}>
           <a
             onClick={() => {
-              setData([randomTruth]);
-              setDisplayNHIE(false);
+              setData(randomTruth);
             }}
             className={styles.card}
           >
@@ -65,8 +56,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomTopic]);
-              setDisplayNHIE(false);
+              setData(randomTopic);
             }}
             className={styles.card}
           >
@@ -74,8 +64,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomDare]);
-              setDisplayNHIE(false);
+              setData(randomDare);
             }}
             className={styles.card}
           >
@@ -83,8 +72,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomFlirt]);
-              setDisplayNHIE(false);
+              setData(randomFlirt);
             }}
             className={styles.card}
           >
@@ -92,8 +80,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomWouldYouRather]);
-              setDisplayNHIE(false);
+              setData(randomWouldYouRather);
             }}
             className={styles.card}
           >
@@ -101,8 +88,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomNickname]);
-              setDisplayNHIE(false);
+              setData(randomNickname);
             }}
             className={styles.card}
           >
@@ -110,8 +96,7 @@ const Home: NextPage = () => {
           </a>
           <a
             onClick={() => {
-              setData([randomNeverHaveIEver]);
-              setDisplayNHIE(true);
+              setData(`Never Have I Ever ${randomNeverHaveIEver}`);
             }}
             className={styles.card}
           >
