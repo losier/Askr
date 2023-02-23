@@ -1,4 +1,6 @@
-import { Container } from "@mui/material";
+import Body from "@/components/Body";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,13 +12,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Container
-          sx={{
-            width: "100%",
-            height: "100vh",
-          }}
-        ></Container>
+      <main
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Navbar />
+        <Body />
+        <Footer />
       </main>
     </>
   );

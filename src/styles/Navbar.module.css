@@ -1,0 +1,123 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1faee;
+  opacity: 0.9;
+  height: 5rem;
+  width: 100%;
+  box-shadow: 0 0 5px var(--color-black);
+  border-bottom: 1px solid var(--color-black);
+}
+
+.navLogo {
+  font-size: 4rem;
+  margin-left: 1rem;
+  font-family: "curtic";
+  letter-spacing: 1rem;
+  font-weight: lighter;
+  background: -webkit-linear-gradient(
+    0deg,
+    #03001e 0%,
+    #7303c0 33%,
+    #ec38bc 66%,
+    #fdeff9 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-right: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.navBtn {
+  color: #1d3557;
+  border: 1px solid #e63946;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.navBtn:hover {
+  color: #e63946;
+  border: 1px solid #a8dadc;
+}
+
+.navMenu input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    width: 100vw;
+    right: 0;
+    font-size: larger;
+    left: 0;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navBtn {
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+    pointer-events: none;
+  }
+
+  .navBtn:first-child {
+    margin-top: 5rem;
+  }
+
+  .navMenu input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2.5rem;
+  }
+
+  .hamburger.active > span {
+    transform: rotate(-45deg) translateY(7px) translateX(-5px);
+    transition: 0.25s linear all;
+  }
+
+  .hamburger.active::before {
+    transition: 0.25s linear all;
+    transform: rotate(45deg) translateY(-7px) translateX(-5px);
+  }
+
+  .hamburger.active::after {
+    transform: translateX(-15px);
+    opacity: 0;
+    transition: 0.25s linear all;
+  }
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 425px) {
+}

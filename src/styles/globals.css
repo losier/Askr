@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "pt-mono";
+  src: url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+}
+
+@font-face {
+  font-family: "curtic";
+  src: url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+}
+
+:root {
+  --color-bg: #e9e7e2;
+  --color-text: #464b9c;
+  --color-primary: #456caf;
+  --color-primary-varient: #448ec2;
+  --color-secondary: #43b0d6;
+  --color-black: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background: linear-gradient(18deg, #edede9 0%, #f1faee 100%);
+  color: var(--color-text);
+  font-family: "lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
