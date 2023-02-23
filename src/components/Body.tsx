@@ -12,12 +12,52 @@ const Body = () => {
       });
   };
 
+  const getDare = () => {
+    fetch("api/dare")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
+  const getTopic = () => {
+    fetch("api/topic")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
+  const getNickname = () => {
+    fetch("api/nickname")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
+  const getNever = () => {
+    fetch("api/nhie")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
+  const getWould = () => {
+    fetch("api/wyr")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
   return (
     <>
       <div className={styles.bodyContainer}>
         <div className={styles.textShowcase}>
           <p>{text}</p>
-          <a>
+          <a onClick={() => navigator.clipboard.writeText(text)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -35,11 +75,21 @@ const Body = () => {
           <button onClick={getTruth} className={styles.btns}>
             Truth
           </button>
-          <button className={styles.btns}>Topic</button>
-          <button className={styles.btns}>Dare</button>
-          <button className={styles.btns}>Nickname</button>
-          <button className={styles.btns}>Never have I ever</button>
-          <button className={styles.btns}>Would you rather</button>
+          <button onClick={getTopic} className={styles.btns}>
+            Topic
+          </button>
+          <button onClick={getDare} className={styles.btns}>
+            Dare
+          </button>
+          <button onClick={getNickname} className={styles.btns}>
+            Nickname
+          </button>
+          <button onClick={getNever} className={styles.btns}>
+            Never have I ever
+          </button>
+          <button onClick={getWould} className={styles.btns}>
+            Would you rather
+          </button>
         </div>
       </div>
     </>
