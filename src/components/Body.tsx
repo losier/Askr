@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/Body.module.css";
-import Image from "next/image";
-import btnSvg from "../assets/copy.svg";
 const Body = () => {
   const [text, setText] = useState("Click a button to see the text...");
   return (
