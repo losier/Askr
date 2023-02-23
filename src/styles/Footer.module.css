@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1faee;
+  color: #464b9c;
+  font-family: "lato", sans-serif;
+  border-top: 1px solid var(--color-black);
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.text {
+  color: #464b9c;
+  text-decoration: none;
+}

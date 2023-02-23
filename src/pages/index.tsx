@@ -24,8 +24,8 @@ export default function Home() {
       >
         <Navbar />
         <Body />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
