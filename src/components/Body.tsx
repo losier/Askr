@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import styles from "../styles/Body.module.css";
 const Body = () => {
   const [text, setText] = useState("Click a button to see the text...");
+  const [clicked, setClicked] = useState(false);
+
+  const getTruth = () => {
+    fetch("api/truth")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
   return (
     <>
       <div className={styles.bodyContainer}>
@@ -21,7 +31,16 @@ const Body = () => {
             </svg>
           </a>
         </div>
-        <div className={styles.btnShowcase}></div>
+        <div className={styles.btnShowcase}>
+          <button onClick={getTruth} className={styles.btns}>
+            Truth
+          </button>
+          <button className={styles.btns}>Topic</button>
+          <button className={styles.btns}>Dare</button>
+          <button className={styles.btns}>Nickname</button>
+          <button className={styles.btns}>Never have I ever</button>
+          <button className={styles.btns}>Would you rather</button>
+        </div>
       </div>
     </>
   );
