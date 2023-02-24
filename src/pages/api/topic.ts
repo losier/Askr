@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import topicJsonData from "../../assets/truth.json";
+import topicJsonData from "../../assets/topic.json";
 
 type Data = {
   id: number;
