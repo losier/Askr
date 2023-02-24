@@ -40,7 +40,7 @@ const Body = () => {
     fetch("api/nhie")
       .then((res) => res.json())
       .then((data) => {
-        setText(data.text);
+        setText(`Neve have I ever ${data.text}`);
       });
   };
 
@@ -48,7 +48,7 @@ const Body = () => {
     fetch("api/wyr")
       .then((res) => res.json())
       .then((data) => {
-        setText(data.text);
+        setText(`Would you rather ${data.text}`);
       });
   };
 
