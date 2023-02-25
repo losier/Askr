@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import styles from "../styles/Body.module.css";
+import CopiedPopup from "./CopiedPopup";
+
 const Body = () => {
   const [text, setText] = useState("Click a button to see the text...");
-  const [clicked, setClicked] = useState(false);
+  const [copied, setCopied] = useState(true);
 
   const getTruth = () => {
     fetch("api/truth")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
+  const getFlirt = () => {
+    fetch("api/flirt")
       .then((res) => res.json())
       .then((data) => {
         setText(data.text);
@@ -52,12 +62,24 @@ const Body = () => {
       });
   };
 
+  const closePopup = () => {
+    setCopied(false);
+  };
+
   return (
     <>
       <div className={styles.bodyContainer}>
         <div className={styles.textShowcase}>
           <p>{text}</p>
-          <a onClick={() => navigator.clipboard.writeText(text)}>
+          <a
+            onClick={() => {
+              navigator.clipboard.writeText(text);
+              setCopied(true);
+              setTimeout(() => {
+                setCopied(false);
+              }, 3000);
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -71,6 +93,12 @@ const Body = () => {
             </svg>
           </a>
         </div>
+        <span
+          style={copied ? { display: "block" } : { display: "none" }}
+          className={styles.copied}
+        >
+          <CopiedPopup isOpen={copied} onClose={closePopup} />
+        </span>
         <div className={styles.btnShowcase}>
           <button onClick={getTruth} className={styles.btns}>
             Truth
@@ -83,6 +111,9 @@ const Body = () => {
           </button>
           <button onClick={getNickname} className={styles.btns}>
             Nickname
+          </button>
+          <button onClick={getFlirt} className={styles.btns}>
+            Flirt
           </button>
           <button onClick={getNever} className={styles.btns}>
             Never have I ever

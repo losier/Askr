@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
 }
@@ -13,10 +14,16 @@
   justify-content: space-between;
   width: 80%;
   height: 8rem;
-  margin-top: 8rem;
   border-radius: 0.5rem;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
   padding: 0.75rem;
+}
+
+.copied {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .textShowcase p {
@@ -27,10 +34,18 @@
 
 .textShowcase a {
   font-weight: 400;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   text-align: center;
   color: #000;
+  border-radius: 0.25rem;
   text-decoration: none;
+  border: 1px solid black;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.textShowcase a:active {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
 .btnShowcase {
