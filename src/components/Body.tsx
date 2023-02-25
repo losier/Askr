@@ -4,7 +4,7 @@ import CopiedPopup from "./CopiedPopup";
 
 const Body = () => {
   const [text, setText] = useState("Click a button to see the text...");
-  const [copied, setCopied] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   const getTruth = () => {
     fetch("api/truth")
