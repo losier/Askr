@@ -62,6 +62,14 @@ const Body = () => {
       });
   };
 
+  const getAdvice = () => {
+    fetch("api/advice")
+      .then((res) => res.json())
+      .then((data) => {
+        setText(data.text);
+      });
+  };
+
   const closePopup = () => {
     setCopied(false);
   };
@@ -114,6 +122,9 @@ const Body = () => {
           </button>
           <button onClick={getFlirt} className={styles.btns}>
             Flirt
+          </button>
+          <button onClick={getAdvice} className={styles.btns}>
+            Advice
           </button>
           <button onClick={getNever} className={styles.btns}>
             Never have I ever
