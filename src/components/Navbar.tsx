@@ -15,7 +15,11 @@ const Navbar = () => {
           <Link className={styles.navBtn} href="/">
             Home
           </Link>
-          <Link className={styles.navBtn} href="/">
+          <Link
+            className={styles.navBtn}
+            href="https://github.com/losier/Askr/issues/new/"
+            target={"_blank"}
+          >
             Issue
           </Link>
           <Link className={styles.navBtn} href="/documentation">
